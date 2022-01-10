@@ -1,5 +1,5 @@
 {
-	"@id": "dtmi:tartabit:AssetTracker;1",
+	"@id": "dtmi:tartabit:AssetTracker;2",
 	"@type": "Interface",
 	"displayName": {
 		"en": "Tartabit Asset Tracker"
@@ -126,20 +126,47 @@
 		{
 			"@type": "Property",
 			"displayName": {
-				"en": "Network Bearer"
+				"en": "Network"
 			},
-			"name": "networkBearer",
-			"schema": "string",
+			"name": "network",
+			"schema": {
+				"@type": "Object",
+				"fields": [{
+						"displayName": {
+							"en": "Bearer"
+						},
+						"name": "bearer",
+						"schema": "string"
+					},
+					{
+						"displayName": {
+							"en": "Provider"
+						},
+						"name": "provider",
+						"schema": "string"
+					},
+					{
+						"displayName": {
+							"en": "RSSI"
+						},
+						"name": "rssi",
+						"schema": "double"
+					}
+
+				]
+			},
 			"writable": false
 		},
 		{
-			"@type": "Property",
+			"@type": [
+				"Property",
+				"Location"
+			],
 			"displayName": {
-				"en": "Network Technology"
+				"en": "Last Known Location"
 			},
-			"name": "networkTechnology",
-			"schema": "string",
-			"writable": false
+			"name": "lastKnownLocation",
+			"schema": "geopoint"
 		}
 	]
 }
