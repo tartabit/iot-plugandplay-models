@@ -1,19 +1,28 @@
 {
-	"@id": "dtmi:tartabit:Device;1",
+	"@id": "dtmi:tartabit:Generic;1",
 	"@type": "Interface",
 	"displayName": {
-		"en": "Device"
+		"en": "Generic Device"
 	},
 	"@context": [
 		"dtmi:iotcentral:context;2",
 		"dtmi:dtdl:context;2"
 	],
-	"contents": [{
-			"@type": "Telemetry",
+	"contents": [
+		{
+			"@type": ["Telemetry", "Event"],
 			"displayName": {
 				"en": "Event"
 			},
 			"name": "event",
+			"schema": "string"
+		},
+		{
+			"@type": ["Telemetry", "State"],
+			"displayName": {
+				"en": "State"
+			},
+			"name": "state",
 			"schema": "string"
 		},
 		{
@@ -28,11 +37,45 @@
 			"schema": "geopoint"
 		},
 		{
-			"@type": "Property",
+			"@type": "Telemetry",
 			"displayName": {
 				"en": "Address"
 			},
 			"name": "address",
+			"schema": "string",
+			"writable": false
+		},
+		{
+			"@type": "Telemetry",
+			"displayName": {
+				"en": "Sensors"
+			},
+			"name": "sensors",
+			"schema": {
+				"@type": "Map",
+				"mapKey": {
+					"name": "sensor",
+					"schema": "string"
+				},
+				"mapValue": {
+					"name": "value",
+					"schema": {
+						"@type": "Object",
+						"fields": [
+							{ "displayName": {"en": "Number"}, "name":"number", "schema":"double"},
+							{ "displayName": {"en": "String"}, "name":"string", "schema":"string"},
+							{ "displayName": {"en": "Boolean"}, "name":"boolean", "schema":"boolean"}
+						]
+					}
+				}
+			}
+		},
+		{
+			"@type": "Property",
+			"displayName": {
+				"en": "Last Known Address"
+			},
+			"name": "lastKnownAddress",
 			"schema": "string",
 			"writable": false
 		},
@@ -46,31 +89,6 @@
 			},
 			"name": "lastKnownLocation",
 			"schema": "geopoint"
-		},
-		{
-			"@type": "Property",
-			"displayName": {
-				"en": "Sensor Metadata"
-			},
-			"name": "sensorMetadata",
-			"schema": {
-				"@type": "Map",
-				"mapKey": {
-					"name": "sensorMeta",
-					"schema": "string"
-				},
-				"mapValue": {
-					"name": "sensor",
-					"schema": {
-						"@type": "Object",
-						"fields": [
-							{ "name":"desc", "displayName": {"en": "Description"}, "schema":"string"},
-							{ "name":"type", "displayName": {"en": "Type"}, "schema":"string"},
-							{ "name":"units", "displayName": {"en": "Units"}, "schema":"string"}
-						]
-					}
-				}
-			}
 		},
 		{
 			"@type": "Property",
