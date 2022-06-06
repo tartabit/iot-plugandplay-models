@@ -23,17 +23,6 @@
 		{
 			"@type": [
 				"Telemetry",
-				"State"
-			],
-			"displayName": {
-				"en": "State"
-			},
-			"name": "state",
-			"schema": "string"
-		},
-		{
-			"@type": [
-				"Telemetry",
 				"Location"
 			],
 			"displayName": {
@@ -48,8 +37,7 @@
 				"en": "Address"
 			},
 			"name": "address",
-			"schema": "string",
-			"writable": false
+			"schema": "string"
 		},
 		{
 			"@type": "Telemetry",
