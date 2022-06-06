@@ -8,7 +8,8 @@
 		"dtmi:iotcentral:context;2",
 		"dtmi:dtdl:context;2"
 	],
-	"contents": [{
+	"contents": [
+		{
 			"@type": [
 				"Telemetry",
 				"Location"
@@ -131,7 +132,8 @@
 			"name": "network",
 			"schema": {
 				"@type": "Object",
-				"fields": [{
+				"fields": [
+					{
 						"displayName": {
 							"en": "Bearer"
 						},
@@ -152,7 +154,6 @@
 						"name": "rssi",
 						"schema": "double"
 					}
-
 				]
 			},
 			"writable": false

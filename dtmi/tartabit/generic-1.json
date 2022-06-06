@@ -10,7 +10,10 @@
 	],
 	"contents": [
 		{
-			"@type": ["Telemetry", "Event"],
+			"@type": [
+				"Telemetry",
+				"Event"
+			],
 			"displayName": {
 				"en": "Event"
 			},
@@ -18,7 +21,10 @@
 			"schema": "string"
 		},
 		{
-			"@type": ["Telemetry", "State"],
+			"@type": [
+				"Telemetry",
+				"State"
+			],
 			"displayName": {
 				"en": "State"
 			},
@@ -62,9 +68,27 @@
 					"schema": {
 						"@type": "Object",
 						"fields": [
-							{ "displayName": {"en": "Number"}, "name":"number", "schema":"double"},
-							{ "displayName": {"en": "String"}, "name":"string", "schema":"string"},
-							{ "displayName": {"en": "Boolean"}, "name":"boolean", "schema":"boolean"}
+							{
+								"displayName": {
+									"en": "Number"
+								},
+								"name": "number",
+								"schema": "double"
+							},
+							{
+								"displayName": {
+									"en": "String"
+								},
+								"name": "string",
+								"schema": "string"
+							},
+							{
+								"displayName": {
+									"en": "Boolean"
+								},
+								"name": "boolean",
+								"schema": "boolean"
+							}
 						]
 					}
 				}
