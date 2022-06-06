@@ -2,7 +2,7 @@
 	"@id": "dtmi:tartabit:AssetTracker;1",
 	"@type": "Interface",
 	"displayName": {
-		"en": "Tartabit Asset Tracker"
+		"en": "TartabitAssetTracker"
 	},
 	"@context": [
 		"dtmi:iotcentral:context;2",
